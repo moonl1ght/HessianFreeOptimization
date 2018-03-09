@@ -1,5 +1,12 @@
-# Hessian Free Optimization
+# Hessian Free Optimization (Truncated Newton)
 Hessian Free Optimizer based on Tensorflow
+
+Hessian-Free optimization (HF) or Truncated Newton are a family of optimization algorithms designed for optimizing 
+non-linear functions with large numbers of independent variables. However, unlike Newton’s method, 
+which optimizes its quadratic approximations using matrix-inverses, HF performs a sub-optimization using the linear
+conjugate gradient algorithm (CG), which doesn’t require ever even forming the curvature matrix
+explicitly, let alone inverting it. It thus belongs to the broad class of approximate Newton methods
+that are practical for high-dimensional optimization problems (like neural network training).
 
 Implemented Hessian-free optimization features from Martens (2010) and 
 Martens and Sutskever (2011):
@@ -54,3 +61,4 @@ Tested on:
 ------------
 * python 3.6.4
 * Tensorflow v1.5.0
+* XOR and MNIST Datasets
